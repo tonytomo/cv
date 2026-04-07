@@ -30,7 +30,9 @@ body {
   font-family: "Satoshi", sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 main {
@@ -38,9 +40,13 @@ main {
   max-width: 50rem;
   margin: 3rem auto;
   padding: 4rem 5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -52,7 +58,12 @@ main {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Bevellier", serif;
   font-weight: 500;
   line-height: 1.2;
@@ -170,8 +181,120 @@ p {
   margin-bottom: 1rem;
 }
 
+/* ─── Flashlight Overlay ─── */
+#flashlight-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--mx) var(--my),
+    transparent var(--fr, 180px),
+    rgba(0, 0, 0, 0.97) var(--ff, 260px)
+  );
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: background;
+}
+
+#flashlight-overlay.lights-on {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Light Switch Button ─── */
+#light-switch {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #888;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+  opacity: 0.4;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+#light-switch:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.14);
+  transform: scale(1.1);
+  box-shadow:
+    0 0 20px rgba(255, 215, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+#light-switch.active {
+  opacity: 0.7;
+  background: rgba(255, 215, 0, 0.12);
+  color: #ffd700;
+  box-shadow:
+    0 0 16px rgba(255, 215, 0, 0.2),
+    0 0 0 1px rgba(255, 215, 0, 0.15);
+}
+
+#light-switch.active:hover {
+  opacity: 1;
+}
+
+/* SVG icon inside the button */
+#light-switch svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  transition: fill 0.3s ease;
+}
+
+/* ─── Hint Text ─── */
+#flashlight-hint {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 9999;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: "Satoshi", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  pointer-events: none;
+  animation: hintFade 4s ease-out forwards;
+}
+
+@keyframes hintFade {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
 /* Print Styles - For "Save as PDF" */
 @media print {
+  #flashlight-overlay,
+  #light-switch,
+  #flashlight-hint {
+    display: none !important;
+  }
+
   :root {
     --text-primary: #000000;
     --text-secondary: #333333;
@@ -186,7 +309,7 @@ p {
     font-size: 9.5pt;
     line-height: 1.35;
   }
-  
+
   main {
     margin: 0;
     padding: 0;
@@ -268,4 +391,3 @@ p {
     display: none;
   }
 }
-
