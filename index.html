@@ -12,70 +12,114 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <button onclick="window.print()" class="print-btn" title="Print Resume">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+        <path
+          d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+        ></path>
+        <rect x="6" y="14" width="12" height="8"></rect>
+      </svg>
+    </button>
     <main>
-      <header>
-        <h1>FATHONI UTOMO</h1>
-        <h2>
-          Software Engineer | Full-Stack Developer | AI Integration Specialist
-        </h2>
-        <p>
-          Surakarta, ID | <a href="mailto:me@tonytomo.me">me@tonytomo.me</a> |
-          <a href="https://linkedin.com/in/tonytomo">
-            linkedin.com/in/tonytomo
-          </a>
-        </p>
+      <header class="resume-header">
+        <div class="header-main">
+          <h1>FATHONI UTOMO</h1>
+          <h2>Software Engineer | Full-Stack Developer</h2>
+        </div>
+        <div class="header-contact">
+          <ul>
+            <li>
+              <a href="https://maps.app.goo.gl/GVcRNX3egRrokQGV7">
+                Surakarta 🇮🇩
+              </a>
+            </li>
+            <li><a href="mailto:me@tonytomo.me">me@tonytomo.me</a></li>
+            <li>
+              <a href="https://linkedin.com/in/tonytomo">
+                linkedin.com/in/tonytomo
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/tonytomo">github.com/tonytomo</a>
+            </li>
+            <li><a href="tel:+6285117085169">+6285117085169</a></li>
+          </ul>
+        </div>
       </header>
+
+      <section>
+        <h2>SUMMARY</h2>
+        <p>
+          Full-Stack Developer specializing in AI-integrated platforms. Proven
+          success in reducing user wait times and automating workflows using
+          Gemini, SvelteKit, and Next.js. Focused on building scalable web
+          solutions that leverage LLMs to optimize business operations.
+        </p>
+      </section>
 
       <section>
         <h2>EXPERIENCE</h2>
 
         <article>
           <header>
-            <h3><strong>BWI</strong> | Web Programmer</h3>
+            <h3>
+              <strong>Business Watch Indonesia</strong> | Web Developer
+              (Contract)
+            </h3>
             <p><em>Dec 2024 – Present</em></p>
           </header>
           <ul>
             <li>
-              Developed and integrated <strong>Gemini AI</strong> into various
-              applications, including automated Q&amp;A systems and content
-              creator assistants.
+              Engineered the Tanilink Q&amp;A platform, reducing wait times from
+              hours to seconds via a "direct-to-AI" model.
             </li>
             <li>
-              Built and deployed <strong>Telegram Bots</strong> to automate
-              business workflows and user interactions.
+              Developed an AI brainstorming assistant that accelerated marketing
+              workflows through automated trend analysis and idea generation.
             </li>
             <li>
-              Streamlined social media management by developing automated tools
-              for Facebook Page content publishing and administration.
+              Co-developed the BisnisLink e-commerce ecosystem and architected a
+              custom CMS to streamline business operations.
             </li>
             <li>
-              Designed and maintained a Content Management System (CMS) for the
-              <strong>BisnisLink</strong> e-commerce platform.
-            </li>
-            <li>
-              Managed full-cycle project development using online collaboration
-              tools to ensure consistent delivery and bug-free releases.
+              Integrated a specialized AI persona into Telegram to provide
+              automated motivational coaching and human-support interactions.
             </li>
           </ul>
         </article>
 
         <article>
           <header>
-            <h3><strong>Kuadran Co</strong> | Front End Developer</h3>
+            <h3>
+              <strong>Kuadran Co</strong> | Front End Developer (Contract)
+            </h3>
             <p><em>May 2024 – Jun 2024</em></p>
           </header>
           <ul>
             <li>
-              Delivered high-quality, user-centric features within an
-              <strong>Agile</strong> development environment, consistently
-              meeting product owner requirements.
+              Delivered high-quality, user-centric features within an Agile
+              development environment, consistently meeting product owner
+              requirements.
             </li>
           </ul>
         </article>
 
         <article>
           <header>
-            <h3><strong>Zyklus Indonesia</strong> | Software Developer</h3>
+            <h3>
+              <strong>Zyklus Indonesia</strong> | Software Developer (Contract)
+            </h3>
             <p><em>Aug 2021 – Jul 2022</em></p>
           </header>
           <ul>
@@ -89,13 +133,13 @@
 
         <article>
           <header>
-            <h3><strong>Solo Technopark</strong> | IT Officer Intern</h3>
+            <h3><strong>Solo Technopark</strong> | IT Officer (Internship)</h3>
             <p><em>Feb 2022 – Jul 2022</em></p>
           </header>
           <ul>
             <li>
-              Successfully prototyped an asset management application tailored
-              to specific organizational requirements.
+              Successfully prototyped an asset management and visitor monitoring
+              application tailored to specific organizational requirements.
             </li>
           </ul>
         </article>
@@ -156,20 +200,21 @@
       <section>
         <h2>TECHNICAL SKILLS</h2>
         <ul>
+          <li><strong>AI/ML:</strong> Gemini, GPT, Claude.</li>
           <li>
-            <strong>Languages:</strong> JavaScript (ES6+), Python, C++, Java,
-            SQL, Indonesia (Native), English (B2).
+            <strong>Frontend:</strong> JavaScript, TypeScript, Svelte, Next.js,
+            Flutter.
           </li>
           <li>
-            <strong>Frameworks/Tools:</strong> Svelte, Next.js, Laravel,
-            Flutter, Game Maker Studio 2, Godot, Gemini, GPT.
+            <strong>Backend/Languages:</strong> Python, Laravel, C++, Java, SQL.
           </li>
           <li>
-            <strong>Cloud &amp; Certifications:</strong>
-            <strong
-              >AWS Cloud Practitioner Essentials, Coursera Software Security
-              Course</strong
-            >.
+            <strong>Tools &amp; Certifications:</strong> AWS Cloud Practitioner
+            Essentials, Coursera Software Security Course, Git, Game Maker
+            Studio 2, Godot.
+          </li>
+          <li>
+            <strong>Spoken Languages:</strong> Indonesia (Native), English (B2).
           </li>
         </ul>
       </section>
