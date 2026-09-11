@@ -1,0 +1,129 @@
+{
+	"title": "Tony Tomo | Welcome to my Curriculum Vitae",
+	"description": "Welcome to my CV. In summary, I am a developer with experience in Frontend and Backend Development, with a strong interest in AI and it's application in Web Development and more.",
+	"name": "Fathoni Satrio Utomo",
+	"sub": "Software Engineer | Full-Stack Developer",
+	"location": "Surakarta 🇮🇩",
+	"map_link": "https://maps.app.goo.gl/GVcRNX3egRrokQGV7",
+	"email": "me@tonytomo.me",
+	"phone": "+6285117085169",
+	"linkedin": "https://linkedin.com/in/tonytomo",
+	"github": "https://github.com/tonytomo",
+	"summary": "Full-Stack Developer specializing in AI-integrated platforms. Proven success in reducing user wait times and automating workflows using Gemini, SvelteKit, and Next.js. Focused on building scalable web solutions that leverage LLMs to optimize business operations. Committed to leveraging AI within educational technology to create accessible, personalized, and scalable learning experiences.",
+	"experiences": [
+		{
+			"title": "Web Developer (Contract)",
+			"company": "Business Watch Indonesia",
+			"location": "Surakarta, Indonesia",
+			"start_date": "Dec 2024",
+			"end_date": "Present",
+			"description": "Full-Stack Developer specializing in AI-integrated platforms. Proven success in reducing user wait times and automating workflows using Gemini, SvelteKit, and Next.js. Focused on building scalable web solutions that leverage LLMs to optimize business operations. Committed to leveraging AI within educational technology to create accessible, personalized, and scalable learning experiences.",
+			"responsibilities": [
+				"Engineered the Tanilink Q&A platform, reducing wait times from hours to seconds via a \"direct-to-AI\" model.",
+				"Developed an AI brainstorming assistant that accelerated marketing workflows through automated trend analysis and idea generation.",
+				"Co-developed the BisnisLink e-commerce ecosystem and architected a custom CMS to streamline business operations.",
+				"Integrated a specialized AI persona into Telegram to provide automated motivational coaching and human-support interactions."
+			]
+		},
+		{
+			"title": "Front End Developer (Contract)",
+			"company": "Kuadran Co",
+			"location": "Remote",
+			"start_date": "May 2024",
+			"end_date": "Jun 2024",
+			"description": "Full-Stack Developer specializing in AI-integrated platforms. Proven success in reducing user wait times and automating workflows using Gemini, SvelteKit, and Next.js. Focused on building scalable web solutions that leverage LLMs to optimize business operations. Committed to leveraging AI within educational technology to create accessible, personalized, and scalable learning experiences.",
+			"responsibilities": [
+				"Delivered high-quality, user-centric features within an Agile development environment, consistently meeting product owner requirements."
+			]
+		},
+		{
+			"title": "Software Developer (Contract)",
+			"company": "Zyklus Indonesia",
+			"location": "Surakarta, Indonesia",
+			"start_date": "Aug 2021",
+			"end_date": "Jul 2022",
+			"description": "Full-Stack Developer specializing in AI-integrated platforms. Proven success in reducing user wait times and automating workflows using Gemini, SvelteKit, and Next.js. Focused on building scalable web solutions that leverage LLMs to optimize business operations. Committed to leveraging AI within educational technology to create accessible, personalized, and scalable learning experiences.",
+			"responsibilities": [
+				"Engineered a fully functional mobile application for waste management services, focusing on optimized UX and seamless process flow."
+			]
+		},
+		{
+			"title": "IT Officer (Internship)",
+			"company": "Solo Technopark",
+			"location": "Surakarta, Indonesia",
+			"start_date": "Feb 2022",
+			"end_date": "Jul 2022",
+			"description": "Full-Stack Developer specializing in AI-integrated platforms. Proven success in reducing user wait times and automating workflows using Gemini, SvelteKit, and Next.js. Focused on building scalable web solutions that leverage LLMs to optimize business operations. Committed to leveraging AI within educational technology to create accessible, personalized, and scalable learning experiences.",
+			"responsibilities": [
+				"Successfully prototyped an asset management and visitor monitoring application tailored to specific organizational requirements."
+			]
+		}
+	],
+	"projects": [
+		{
+			"title": "Sim Quiz",
+			"year": "2025",
+			"description": "A text-based quiz simulator built with SvelteKit and PWA technology for offline accessibility.",
+			"link": "https://tonytomo.github.io/simquiz"
+		},
+		{
+			"title": "AI Content Creator Assistant",
+			"year": "2025",
+			"description": "A web-based tool integrated with Gemini API for automated content idea generation and guides."
+		},
+		{
+			"title": "Tanilink AI",
+			"year": "2025",
+			"description": "A web-based QnA platform integrated with Gemini API for easy and fast answer about agriculture and business.",
+			"link": "https://tanya.tanilink.com"
+		},
+		{
+			"title": "Omnitor",
+			"year": "2024",
+			"description": "Real-time Bluetooth-based monitoring system for IoT.",
+			"link": "https://tonytomo.github.io/omnitor"
+		},
+		{
+			"title": "Game Development",
+			"year": "2021",
+			"description": "Developed interactive web-based games using Game Maker Studio 2"
+		},
+		{
+			"title": "Mancala Game",
+			"year": "2021",
+			"description": "A web-based Mancala game",
+			"link": "https://tonytomo.github.io/mancala"
+		}
+	],
+	"educations": [
+		{
+			"title": "Bachelor of Computer Science",
+			"institution": "Sebelas Maret University",
+			"start_year": "2019",
+			"end_year": "2024",
+			"gpa": "3.67 / 4.00"
+		}
+	],
+	"skills": [
+		{
+			"title": "AI/ML",
+			"skills": ["LLM", "RAG", "Pathfinding", "Neural Network"]
+		},
+		{
+			"title": "Languages",
+			"skills": ["TypeScript", "Python", "Dart", "SQL", "PHP", "Golang"]
+		},
+		{
+			"title": "Frameworks",
+			"skills": ["SvelteKit", "Node.js", "Next.js", "Flutter", "Laravel"]
+		},
+		{
+			"title": "Tools",
+			"skills": ["Git", "Docker", "PostgreSQL", "MongoDB", "MySQL"]
+		},
+		{
+			"title": "Spoken Languages",
+			"skills": ["Indonesian (Native)", "English (Professional Working)"]
+		}
+	]
+}
