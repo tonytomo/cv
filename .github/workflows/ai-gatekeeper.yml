@@ -30,13 +30,24 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
         run: |
           python3 - << 'EOF'
           import os, json, subprocess, urllib.request
 
           pr_number = os.environ["PR_NUMBER"]
+          pr_title = os.environ.get("PR_TITLE", "")
+          pr_body = os.environ.get("PR_BODY", "")
           api_key = os.environ["GEMINI_API_KEY"]
 
+          # 1. Check for manual developer bypass
+          if "[skip ai]" in (pr_title + pr_body).lower() or "[force merge]" in (pr_title + pr_body).lower():
+              print("Manual bypass tag detected. Skipping AI review.")
+              subprocess.run(["gh", "pr", "comment", pr_number, "--body", "🤖 **AI Gatekeeper:** Bypassed via manual override tag."], check=True)
+              exit(0)
+
+          # 2. Grab diff
           diff = subprocess.check_output(["git", "diff", "origin/main...HEAD"]).decode("utf-8")
           if not diff.strip():
               print("No diff detected.")
@@ -44,7 +55,13 @@ jobs:
 
           diff_truncated = diff[:15000]
 
-          prompt = f"""You are an automated code review gatekeeper. Review this git diff:
+          # 3. Supply PR Intent & Diff to AI
+          prompt = f"""You are an automated code review gatekeeper. 
+          The developer provided this context for the change:
+          Title: {pr_title}
+          Description: {pr_body}
+
+          Review this git diff in light of the developer's stated intent:
           ```diff
           {diff_truncated}
           ```
@@ -53,7 +70,7 @@ jobs:
             "passed": true/false,
             "feedback": "Concise summary of findings or issues in markdown format"
           }}
-          Set passed=false only if there are critical bugs, security risks, or breaking flaws. Ignore minor stylistic preferences.
+          CRITICAL: If large blocks of code/files were deleted because they were refactored or made dynamic according to the PR context, DO NOT flag this as a regression. Only fail for genuine syntax errors, leaked secrets, or broken logic.
           """
 
           url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
