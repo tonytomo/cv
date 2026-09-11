@@ -73,7 +73,7 @@ jobs:
           CRITICAL: If large blocks of code/files were deleted because they were refactored or made dynamic according to the PR context, DO NOT flag this as a regression. Only fail for genuine syntax errors, leaked secrets, or broken logic.
           """
 
-          url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+          url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key={api_key}"
           payload = {
               "contents": [{"parts": [{"text": prompt}]}],
               "generationConfig": {"response_mime_type": "application/json"}
